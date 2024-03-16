@@ -2,8 +2,8 @@
   "name": "elysia-app",
   "version": "1.0.50",
   "scripts": {
-    "db:generate": "bun drizzle-kit generate:mysql",
-    "db:migrate": "bun run src/database/migrate.ts",
+    "db:generate": "drizzle-kit generate:mysql",
+    "db:migrate": "drizzle-kit push:mysql",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "bun run --watch src/index.ts"
   },
