@@ -1,15 +1,8 @@
 import { Elysia } from "elysia";
-import { dbPlugin } from "./plugin/db.plugin";
-import userRoutes from "./routes/user.routes";
+import app from "./app";
 
-const app = new Elysia()
-  .use(dbPlugin())
-  .get("/", async () => {
-    return `Hello Ellysia!`;
-  })
-  .use(userRoutes)
-  .listen(3000);
+const server = new Elysia().use(app).listen(3000);
 
 console.log(
-  `🦊 Elysia is running at http://${app.server?.hostname}:${app.server?.port}`,
+  `🦊 Elysia is running at http://${server.server?.hostname}:${server.server?.port}`,
 );
